@@ -1,6 +1,6 @@
-numpy
-joblib
-jsonify
-request
-render_template
 Flask
+gunicorn
+joblib
+numpy
+pandas
+scikit-learn

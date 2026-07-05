@@ -1,12 +1,14 @@
 from flask import Flask, render_template, request, jsonify
 import joblib
 import numpy as np
+import os
 
 app = Flask(__name__)
 
-# Load once
-sc = joblib.load(r"C:\Users\asus\Desktop\Major Project\models\sc.sav")
-model = joblib.load(r"C:\Users\asus\Desktop\Major Project\models\rf.sav")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+sc = joblib.load(os.path.join(BASE_DIR, "models", "sc.sav"))
+model = joblib.load(os.path.join(BASE_DIR, "models", "rf.sav"))
 
 
 @app.route("/")
@@ -35,4 +37,4 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=9457)
+    app.run(debug=True)

@@ -1,0 +1,6 @@
+numpy
+joblib
+jsonify
+request
+render_template
+Flask
